@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,7 +36,7 @@ public class ProductController {
     }
 
     @GetMapping("/productById/{id}")
-    public Product findProductById(@PathVariable int id){
+    public Product findProductById(@PathVariable UUID id){
         return service.getProductById(id);
     }
 
@@ -50,7 +51,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable int id){
+    public String deleteProduct(@PathVariable UUID id){
         return service.deleteProduct(id);
     }
 

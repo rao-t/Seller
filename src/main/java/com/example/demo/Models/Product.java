@@ -24,7 +24,7 @@ public class Product {
     @GeneratedValue
 
     private UUID id;
-    private String title;
+    private String name;
     private String description;
     private Double price;
    
