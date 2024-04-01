@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Enum.ProductStatus;
 import com.example.demo.Models.Product;
 import com.example.demo.Service.ProductService;
 
@@ -50,10 +51,18 @@ public class ProductController {
         return service.updateProduct(product);
     }
 
+    @PutMapping("/productStatus/{id}/status/{status}")
+    public String updateProductStatus(@PathVariable UUID id, @PathVariable ProductStatus status) {
+        service.updateProductStatus(status);
+        return "Product status updated successfully";
+    }
+
     @DeleteMapping("/delete/{id}")
     public String deleteProduct(@PathVariable UUID id){
         return service.deleteProduct(id);
     }
+
+ 
 
 
 }
